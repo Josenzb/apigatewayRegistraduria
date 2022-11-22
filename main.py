@@ -76,7 +76,7 @@ def validarPermiso(endPoint,metodo,idRol):
 @app.route("/candidatos",methods=['GET'])
 def getCandidatos():
     headers = {"Content-Type": "application/json; charset=utf-8"}
-    url = dataConfig["http://127.0.0.1:9999"] + '/candidatos'
+    url = dataConfig["url-backend-resultados"] + '/candidatos'
     response = requests.get(url, headers=headers)
     json = response.json()
     return jsonify(json)
@@ -85,7 +85,7 @@ def getCandidatos():
 def crearCandidato():
     data = request.get_json()
     headers = {"Content-Type": "application/json; charset=utf-8"}
-    url = dataConfig["http://127.0.0.1:9999"] + '/candidatos'
+    url = dataConfig["url-backend-resultados"] + '/candidatos'
     response = requests.post(url, headers=headers,json=data)
     json = response.json()
     return jsonify(json)
@@ -93,7 +93,7 @@ def crearCandidato():
 @app.route("/candidatos/<string:id>",methods=['GET'])
 def getCandidato(id):
     headers = {"Content-Type": "application/json; charset=utf-8"}
-    url = dataConfig["http://127.0.0.1:9999"] + '/candidatos'+id
+    url = dataConfig["url-backend-resultados"] + '/candidatos/' + id
     response = requests.get(url, headers=headers)
     json = response.json()
     return jsonify(json)
@@ -102,7 +102,7 @@ def getCandidato(id):
 def modificarCandidato(id):
     data = request.get_json()
     headers = {"Content-Type": "application/json; charset=utf-8"}
-    url = dataConfig["http://127.0.0.1:9999"] + '/candidatos'+id
+    url = dataConfig["url-backend-resultados"] + '/candidatos/'+id
     response = requests.put(url, headers=headers, json=data)
     json = response.json()
     return jsonify(json)
@@ -110,7 +110,7 @@ def modificarCandidato(id):
 @app.route("/candidatos/<string:id>",methods=['DELETE'])
 def eliminarCandidato(id):
     headers = {"Content-Type": "application/json; charset=utf-8"}
-    url = dataConfig["http://127.0.0.1:9999"] + '/candidatos' + id
+    url = dataConfig["url-backend-resultados"] + '/candidatos/' + id
     response = requests.delete(url, headers=headers)
     json = response.json()
     return jsonify(json)
@@ -120,7 +120,7 @@ def eliminarCandidato(id):
 @app.route("/partidos",methods=['GET'])
 def getPartidos():
     headers = {"Content-Type": "application/json; charset=utf-8"}
-    url = dataConfig["http://127.0.0.1:9999"] + "/partidos"
+    url = dataConfig["url-backend-resultados"] + "/partidos"
     response = requests.get(url, headers=headers)
     json = response.json()
     return jsonify(json)
@@ -129,7 +129,7 @@ def getPartidos():
 def crearPartido():
     data = request.get_json()
     headers = {"Content-Type": "application/json; charset=utf-8"}
-    url = dataConfig["http://127.0.0.1:9999"] + "/partidos"
+    url = dataConfig["url-backend-resultados"] + "/partidos"
     response = requests.post(url, headers=headers,json=data)
     json = response.json()
     return jsonify(json)
@@ -137,7 +137,7 @@ def crearPartido():
 @app.route("/partidos/<string:id>",methods=['GET'])
 def getPartido(id):
     headers = {"Content-Type": "application/json; charset=utf-8"}
-    url = dataConfig["http://127.0.0.1:9999"] + "/partidos"+id
+    url = dataConfig["url-backend-resultados"] + "/partidos/"+id
     response = requests.get(url, headers=headers)
     json = response.json()
     return jsonify(json)
@@ -146,7 +146,7 @@ def getPartido(id):
 def modificarPartido(id):
     data = request.get_json()
     headers = {"Content-Type": "application/json; charset=utf-8"}
-    url = dataConfig["http://127.0.0.1:9999"] + "/partidos"+id
+    url = dataConfig["url-backend-resultados"] + "/partidos/"+id
     response = requests.put(url, headers=headers, json=data)
     json = response.json()
     return jsonify(json)
@@ -154,7 +154,7 @@ def modificarPartido(id):
 @app.route("/partidos/<string:id>",methods=['DELETE'])
 def eliminarPartido(id):
     headers = {"Content-Type": "application/json; charset=utf-8"}
-    url = dataConfig["http://127.0.0.1:9999"] + "/partidos" + id
+    url = dataConfig["url-backend-resultados"] + "/partidos/" + id
     response = requests.delete(url, headers=headers)
     json = response.json()
     return jsonify(json)
@@ -165,7 +165,7 @@ def eliminarPartido(id):
 @app.route("/mesas",methods=['GET'])
 def getMesas():
     headers = {"Content-Type": "application/json; charset=utf-8"}
-    url = dataConfig["http://127.0.0.1:9999"] + "/mesas"
+    url = dataConfig["url-backend-resultados"] + "/mesas"
     response = requests.get(url, headers=headers)
     json = response.json()
     return jsonify(json)
@@ -174,7 +174,7 @@ def getMesas():
 def crearMesa():
     data = request.get_json()
     headers = {"Content-Type": "application/json; charset=utf-8"}
-    url = dataConfig["http://127.0.0.1:9999"] + "/mesas"
+    url = dataConfig["url-backend-resultados"] + "/mesas"
     response = requests.post(url, headers=headers,json=data)
     json = response.json()
     return jsonify(json)
@@ -182,7 +182,7 @@ def crearMesa():
 @app.route("/mesas/<string:id>",methods=['GET'])
 def getMesa(id):
     headers = {"Content-Type": "application/json; charset=utf-8"}
-    url = dataConfig["http://127.0.0.1:9999"] + "/mesas"+id
+    url = dataConfig["url-backend-resultados"] + "/mesas/"+id
     response = requests.get(url, headers=headers)
     json = response.json()
     return jsonify(json)
@@ -191,7 +191,7 @@ def getMesa(id):
 def modificarMesa(id):
     data = request.get_json()
     headers = {"Content-Type": "application/json; charset=utf-8"}
-    url = dataConfig["http://127.0.0.1:9999"] + "/mesas"+id
+    url = dataConfig["url-backend-resultados"] + "/mesas/"+id
     response = requests.put(url, headers=headers, json=data)
     json = response.json()
     return jsonify(json)
@@ -199,7 +199,7 @@ def modificarMesa(id):
 @app.route("/mesas/<string:id>",methods=['DELETE'])
 def eliminarMesa(id):
     headers = {"Content-Type": "application/json; charset=utf-8"}
-    url = dataConfig["http://127.0.0.1:9999"] + "/mesas" + id
+    url = dataConfig["url-backend-resultados"] + "/mesas/" + id
     response = requests.delete(url, headers=headers)
     json = response.json()
     return jsonify(json)
